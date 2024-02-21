@@ -1,9 +1,7 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 
-class CustomStatusCard extends StatelessWidget {
-  const CustomStatusCard({super.key});
+class CustomCallCard extends StatelessWidget {
+  const CustomCallCard({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,25 +15,6 @@ class CustomStatusCard extends StatelessWidget {
           children: [
             Row(
               children: [
-                Text(
-                  "Status",
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 21),
-                ),
-                Spacer(),
-                Icon(
-                  Icons.more_vert,
-                  color: Colors.black,
-                )
-              ],
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Row(
-              children: [
                 CircleAvatar(
                   radius: 24,
                 ),
@@ -47,14 +26,14 @@ class CustomStatusCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "My Status",
+                      "Create call link",
                       style: TextStyle(
                           color: Colors.black,
-                          fontSize: 19,
+                          fontSize: 18,
                           fontWeight: FontWeight.bold),
                     ),
                     Text(
-                      "Tap to add status update",
+                      "Share a link for your WhatsApp call",
                       style: TextStyle(
                           color: Colors.black,
                           fontSize: 14,
@@ -68,11 +47,11 @@ class CustomStatusCard extends StatelessWidget {
               height: 20,
             ),
             Text(
-              "Recent Updates",
+              "Recent",
               style: TextStyle(
                   color: Colors.black,
-                  fontSize: 12,
-                  fontWeight: FontWeight.w300),
+                  fontSize: 14,
+                  fontWeight: FontWeight.w400),
             ),
             SizedBox(
               height: 20,
@@ -86,7 +65,20 @@ class CustomStatusCard extends StatelessWidget {
                         radius: 20,
                       ),
                       title: Text("Name"),
-                      subtitle: Text("18 minutes ago"),
+                      subtitle: Row(
+                        children: [
+                          Icon(
+                            Icons.arrow_outward,
+                            color: Colors.green,
+                            size: 17,
+                          ),
+                          Text("Today, 10:18 Am")
+                        ],
+                      ),
+                      trailing: Icon(
+                        Icons.phone,
+                        color: Colors.green,
+                      ),
                     ),
                 separatorBuilder: (context, index) => SizedBox(
                       height: 20,
